@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.ContinuumHypothesisMartinSAxiomLemmaCanonicalLaneLean.ModelsOfSetTheory
+import HautevilleHouse.ContinuumHypothesisMartinSAxiomLemmaCanonicalLaneLean.ForcingNotion
+import HautevilleHouse.ContinuumHypothesisMartinSAxiomLemmaCanonicalLaneLean.MartinAxiom
+import HautevilleHouse.ContinuumHypothesisMartinSAxiomLemmaCanonicalLaneLean.ContinuumHypothesis
+import HautevilleHouse.ContinuumHypothesisMartinSAxiomLemmaCanonicalLaneLean.Equiconsistency
+
+namespace HautevilleHouse
+namespace ContinuumHypothesisMartinSAxiomLemmaCanonicalLaneLean
+
+def ConstrainedCHMAClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_chma_endgame (A : AdmissibleClass) :
+    ConstrainedCHMAClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ContinuumHypothesisMartinSAxiomLemmaCanonicalLaneLean
+end HautevilleHouse
